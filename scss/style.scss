@@ -1,0 +1,419 @@
+@use "reset";
+@use "header";
+@use "footer";
+@use "module";
+@use "mixin" as * ;
+@use "variables" as * ;
+@use "common";
+
+
+
+.page-wrap{
+    display: flex;
+    @include mq(sp){
+        display: initial;
+    }
+}
+
+.main-visual {
+    background: url(../img/photo01.jpg) center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: calc(100vw - 160px);
+    margin-bottom: 288px;
+    @include mq(sp){
+        height: 50vh;
+        width: 100%;
+        margin-bottom: 96px;
+    }
+}
+
+
+.products {
+    .section-headline {
+        text-align: center;
+    }
+
+    &-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 54px;
+    }
+
+    &-content {
+        width: 50%;
+
+        &__img {
+            width: 100%;
+        }
+    }
+}
+
+.recommend {
+    .section-headline {
+        text-align: center;
+    }
+
+    &-wrap {
+        max-width: 1080px;
+        margin: 54px auto 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 36px;
+
+        @include mq(sp){
+            max-width: initial;
+            margin: 32px auto 0;
+            padding: 0 20px;
+            row-gap: 24px;
+            .article{
+                width: 49%;
+            }
+        }
+    }
+
+    &-content {
+
+        &__img {
+            height: 200px;
+            width: 300px;
+            display: inline-block;
+
+            @include mq(sp){
+                width: 100%;
+                height: initial;
+            }
+        }
+
+        &__title {
+            font-family: $serif;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        &__price {
+            font-family: $serif;
+        }
+    }
+
+    .btn {
+        margin-top: 72px;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include mq(sp){
+            margin-top: 32px;
+        }
+    }
+}
+
+.concept {
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-bottom: 288px;
+
+    @include mq(sp){
+        max-width: initial;
+    }
+
+    .section-headline{
+        @include mq(sp){
+            margin-left: 20px;
+        }
+    }
+
+    &1 {
+        height: 450px;
+        margin-bottom: 90px;
+        position: relative;
+
+        @include mq(sp){
+            position: initial;
+            height: initial;
+            background-color: $sub;
+            margin-top: 32px;
+            margin-bottom: 36px;
+            margin-right: 20px;
+            padding-right: 20px;
+        }
+
+        &__img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+
+            @include mq(sp){
+                position: initial;
+                width: 100%;
+            }
+        }
+
+        &-wrap {
+            background-color: $sub;
+            width: 920px;
+            height: 360px;
+            padding: 70px 56px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+
+            @include mq(sp){
+                background-color: initial;
+                width: initial;
+                height: initial;
+                padding: initial;
+                position: initial;
+                bottom: initial;
+                left: initial;
+                z-index: initial;
+                padding: 20px 0 20px 20px;
+            }
+        }
+
+        &__headline {
+            color: $white;
+            font-weight: bold;
+            margin-bottom: 28px;
+            @include mq(sp){
+                margin-bottom: 20px;
+                font-family: $serif;
+            }
+        }
+
+        &__text {
+            color: $white;
+            font-family: $sans;
+            line-height: 2;
+            @include mq(sp){
+                line-height: 1.8;
+            }
+        }
+    }
+
+    &2 {
+        position: relative;
+
+        @include mq(sp){
+            position: initial;
+            margin-left: 20px;
+        }
+
+        &__img {
+            width: 50%;
+            @include mq(sp){
+                width: 100%;
+            }
+        }
+
+        &-wrap {
+            position: absolute;
+            top: 50%;
+            left: 428px;
+            transform: translateY(-50%);
+
+            @include mq(sp){
+                position:  initial;
+                top:  initial;
+                left:  initial;
+                transform:  initial;
+                padding-top: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        &__headline {
+            font-weight: bold;
+            margin-bottom: 28px;
+            @include mq(sp){
+                font-family: $serif;
+                margin-bottom: 20px;
+            }
+
+        &__text {
+            font-family: $sans;
+            line-height: 2;
+            @include mq(sp){
+                line-height: 1.8;
+            }
+        }
+    }
+}}
+
+.news {
+    background: url(../img/newsBackground.jpg) center center no-repeat;
+    background-size: cover;
+    padding: 54px 0;
+
+    @include mq(sp){
+        padding: 36px 0;
+    }
+
+    .section-headline {
+        text-align: center;
+    }
+
+    &-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 640px;
+        margin: 32px auto 0;
+        @include mq(sp){
+            display: block;
+            max-width: 288px;
+            margin: 32px auto 0;
+        }
+    }
+
+    &-content {
+        margin-bottom: 36px;
+        @include mq(sp){
+            margin-bottom: 24px;
+        }
+
+        &__date {
+            font-family: $sans;
+            font-size: 12px;
+            margin-bottom: 8px;
+            @include mq(sp){
+                font-size: 10px;
+                margin-bottom: 4px;
+            }
+        }
+
+        &__title {
+            font-family: $sans;
+            margin-bottom: 8px;
+            @include mq(sp){
+                margin-bottom: 4px;
+            }
+        }
+
+        &__line {
+            background: $black;
+            height: 1px;
+            width: 288px;
+            @include mq(sp){
+                width: 100%;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 28px;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include mq(sp){
+            margin-top: 32px;
+        }
+    }
+}
+
+.contact {
+    max-width: 1080px;
+    margin: 0 auto;
+    @include mq(sp){
+        max-width: initial;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    &-wrap {
+        height: 468px;
+        position: relative;
+        @include mq(sp){
+            @include mq(sp){
+                height: initial;
+                margin-top: 32px;
+            }
+        }
+
+
+        &::after {
+            background-color: $sub;
+            content: "";
+            height: 405px;
+            width: calc( ( (100vw - 160px) / 2 ) - 63px);
+            position: absolute;
+            bottom: 0;
+            left: calc(50% + 63px);
+            z-index: -1;
+    
+            @include mq(sp){
+                bottom: initial;
+                left: initial;
+                top: 40px;
+                right: 0;
+                width: calc(100vw - 80px);
+                height: calc( ( (100vw - 80px) / 4) * 3);
+            }
+        }
+    }
+
+
+    &__img {
+        width: 50%;
+        position: absolute;
+        // ??
+        top: 0;
+        right: 0;
+        @include mq(sp){
+            position: initial;
+            width: calc(100% - 40px);
+        }
+    }
+
+    &-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @include mq(sp){
+            position: initial;
+            transform: initial;
+            margin-top: 72px;
+        }
+    }
+
+    &__headline {
+        font-weight: bold;
+        margin-bottom: 28px;
+        @include mq(sp){
+            font-family: $serif;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text {
+        font-family: $sans;
+        line-height: 2;
+        @include mq(sp){
+            line-height: 1.8;
+        }
+    }
+
+    .btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        bottom: 4px;
+        @include mq(sp){
+            position: relative;
+            bottom: initial;
+            left: initial;
+            margin-top: 32px;
+
+        }
+    }
+}
+
+
+.section {
+    margin-bottom: 288px;
+    @include mq(sp){
+        margin-bottom: 96px;
+    }
+}
